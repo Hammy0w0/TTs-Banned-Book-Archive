@@ -1,0 +1,76 @@
+.book_div_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.new_line {
+    flex-basis: 100%;
+}
+
+.book_div {
+    position: relative; /* Ensure the text overlay stays within the book div */
+    height: 300px;
+    width: 200px;
+    margin: 15px;
+    overflow: hidden;
+}
+
+.book_cover {
+    height: 100%;
+    width: 100%;
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.book_div:hover .book_cover {
+    filter: brightness(50%); /* Darkens the image */
+    transform: scale(1.1); /* Slightly zooms in the image */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4f4f4f;
+    font-size: 30px;
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease, color 0.5s ease;
+    pointer-events: none; /* Ensures the text doesn't interfere with the hover */
+}
+
+.overlay-button {
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    display: none;
+    /*transform: translate(%, -50%);*/
+}
+
+
+#overlay-magnet-button {
+    position: absolute;
+    padding:5px;
+    transform:translate(-180%,0%);
+}
+
+#overlay-direct-button {
+    position:absolute;
+    padding: 5px;
+    transform: translate(-10%,0)
+}
+
+.book_div:hover .overlay-text {
+    opacity: 1; /* Shows text on hover */
+    z-index: 2;
+    color: white;
+}
+
+.book_div:hover .overlay-button {
+    display:block;
+    z-index: 2;
+}
+
+p {
+    color: blue;
+}
